@@ -1,0 +1,6 @@
+jobs:
+  foo:
+    requires: [~pr, ~commit]
+    image: node:16
+    steps:
+      - echo "foo"
