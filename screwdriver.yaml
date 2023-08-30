@@ -4,3 +4,15 @@ jobs:
     image: node:16
     steps:
       - echo "foo"
+  job-level:
+    requires: [~pr, ~commit]
+    image: node:16
+    parameters:
+      region:
+        value: "aws"
+        description: "Region setting"
+      cluster: ["cluster1", "cluster2"]
+    steps:
+      - show: |
+          echo "Region: $(meta get meta.parameters.region.value)"
+          echo "Cluster: $(meta get meta.parameters.cluster.value)"
