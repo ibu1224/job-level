@@ -14,5 +14,5 @@ jobs:
       cluster: ["cluster1", "cluster2"]
     steps:
       - show: |
-          echo "Region: $(meta get parameters.region.value)"
-          echo "Cluster: $(meta get parameters.cluster.value)"
+          echo "Region: $(meta get meta.parameters.region.value)"
+          echo "Cluster: $(meta get meta.parameters.cluster.value)"
